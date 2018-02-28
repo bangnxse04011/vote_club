@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var passportfb = require('passport-facebook').Strategy;
 var session = require('express-session');
-var db = require('./public/js/db_table');
+var db = require('./public/js/db_table_account');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -72,7 +72,6 @@ passport.use(new passportfb(
         id_user: profile._json.id
       }
     }).then(account => {
-      console.log(account + "------------------------")
       if(account == null || account == '' || account.length == 0) {
         db.create({
           fullName : profile._json.name,

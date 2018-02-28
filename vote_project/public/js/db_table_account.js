@@ -1,4 +1,4 @@
-var connection_db = require('./db');
+var connection_db = require('./db_connect_postgre');
 const Sequelize = require('sequelize');
 
 /**
