@@ -43,7 +43,7 @@ app.use('/authen' , login);
 
 app.get('/authen/fb' , passport.authenticate('facebook' , {scope : ['email']}));
 
-app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '/login',session:false }),
+app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '/login',session:false,auth_type: 'reauthenticate' }),
   function(req, res) {
     // Successful authentication, redirect home.
     req.session.user_id = users_id_user;

@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
         let video_array = video.map((r) => (r.toJSON()));
         console.log(video_array);
         res.render('index' , {
-          title : 'Mic On - Medoly Club',
+          title : 'Mic On',
           user_name : account.fullName,
           link_login_or_logout : '/log_out',
           data_video_array : video_array
