@@ -11,6 +11,8 @@ var db = require('./public/js/db_table_account');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var login = require('./routes/login')
+var users_id_user = '';
 
 var app = express();
 
@@ -21,8 +23,10 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(session({
-  secret : "fdafjdsf"
-}));
+  secret : "secret",
+  saveUninitialized: true,
+  resave: true
+}))
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -35,12 +39,21 @@ app.use(passport.session());
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/authen' , login);
+
 app.get('/authen/fb' , passport.authenticate('facebook' , {scope : ['email']}));
-app.get('/authen/fb/cb' , passport.authenticate('facebook',{
-  failureRedirect: '/',
-  successRedirect: '/',
-  session: false
-}));
+
+app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '/login',session:false }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    req.session.user_id = users_id_user;
+    console.log(req.session.user_id);
+    res.redirect('/users');
+  });
+    // successRedirect: '/users',
+    // session: false
+  // }
+// ));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,7 +69,7 @@ passport.use(new passportfb(
   {
     clientID: "418017485293597",
     clientSecret: "1a3d43fda924f8283e8ce614e91e9ca7",
-    callbackURL: "http://localhost:3000/authen/fb/cb",
+    callbackURL: "http://192.168.118.26:3000/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
@@ -67,6 +80,7 @@ passport.use(new passportfb(
     /**
      * Find all check all user if user exits in DB
      */
+    users_id_user = profile._json.id;
     db.findAll({
       where : {
         id_user: profile._json.id
@@ -76,12 +90,15 @@ passport.use(new passportfb(
         db.create({
           fullName : profile._json.name,
           email : profile._json.email,
-          id_user: profile._json.id
+          id_user: profile._json.id,
+          role : 0
         });
         return done(null, account);
       } else {
         return done(null, account);
       }
+    }).catch(function (err) {
+      console.log(err);
     });
   }
 ));
@@ -103,6 +120,8 @@ passport.deserializeUser((id,done) => {
     }
   }).then(account => {
     done(null,account);
+  }).catch(function (err) {
+    console.log(err);
   });
 });
 
