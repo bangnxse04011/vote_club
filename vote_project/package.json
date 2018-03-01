@@ -18,6 +18,7 @@
     "express-session": "*",
     "sequelize" : "*",
     "pg": "*",
-    "pg-hstore": "*"
+    "pg-hstore": "*",
+    "ejs-lint" : "*"
   }
 }

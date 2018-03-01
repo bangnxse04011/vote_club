@@ -48,7 +48,7 @@ app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '
     // Successful authentication, redirect home.
     req.session.user_id = users_id_user;
     console.log(req.session.user_id);
-    res.redirect('/users');
+    res.redirect('/');
   });
     // successRedirect: '/users',
     // session: false
@@ -69,7 +69,7 @@ passport.use(new passportfb(
   {
     clientID: "418017485293597",
     clientSecret: "1a3d43fda924f8283e8ce614e91e9ca7",
-    callbackURL: "http://192.168.118.26:3000/authen/fb/cb",
+    callbackURL: "http://192.168.118.4:3000/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
