@@ -13,12 +13,12 @@
     "express": "~4.15.5",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
-    "passport" : "*",
-    "passport-facebook" : "*",
+    "passport": "*",
+    "passport-facebook": "*",
     "express-session": "*",
-    "sequelize" : "*",
+    "sequelize": "*",
     "pg": "*",
     "pg-hstore": "*",
-    "ejs-lint" : "*"
+    "ejs-lint": "*"
   }
 }
