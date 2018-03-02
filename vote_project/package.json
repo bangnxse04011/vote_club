@@ -1,5 +1,5 @@
 {
-  "name": "vote-project",
+  "name": "micon",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -20,5 +20,10 @@
     "pg": "*",
     "pg-hstore": "*",
     "ejs-lint": "*"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "bangnx1",
+  "license": "ISC",
+  "description": ""
 }
