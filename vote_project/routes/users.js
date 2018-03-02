@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/find_by_name', function(req, res, next) {
+  let video_array;
   let user_id = req.session.user_id;
   let name_search = req.query.name_search;
   db_manager_video.findAll({
@@ -21,18 +22,30 @@ router.get('/find_by_name', function(req, res, next) {
     },
     plain: false
   }).then(video => {
-    let video_array = video.map((r) => (r.toJSON()));
-    // res.render('details' , {
-    //   title : 'Mic On',
-    //   user_name : account.fullName,
-    //   link_login_or_logout : '/log_out',
-    //   data_video_array : video_array,
-    //   user_profile_video_view : user_profile_video
-    // });
-    console.log(video_array);
+    video_array = video.map((r) => (r.toJSON()));
   }).catch(function (err) {
     console.log(err);
   });
+  // Check if user login
+  if(user_id) {
+    db_account.findOne({
+      where : {
+        id_user: user_id
+      }
+    }).then(account => {
+      res.render('search' , {
+        title : 'Mic On',
+        user_name : account.fullName,
+        link_login_or_logout : '/log_out',
+        data_video_array : video_array
+      });
+    }).catch(function (err) {
+      console.log(err);
+    });
+  //---------------------------------------------
+  } else {
+    res.render('search', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' , data_video_array : video_array });
+  }
 });
 
 module.exports = router;
