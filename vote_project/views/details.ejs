@@ -53,7 +53,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <div class="">
-                                <input type="text" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên">
+                                <input type="text" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" value="<% name_search_res %>" />
                             </div>
                         </li>
                         <li class="nav-item" style="margin-left:1em;margin-right:1em;">
@@ -99,7 +99,7 @@
                 <% data_video_array.forEach(function(data_video) { %>
                     <div class="row rowsecond">
                         <div class="col-xs-6 col-md-6">
-                                <a href="/details/<%= data_video.id %>">
+                            <a href="/details/<%= data_video.id %>">
                                 <img src="https://img.youtube.com/vi/<%= data_video.link_video %>/default.jpg" alt="Smiley face" height="auto" width="100%">
                             </a>
                         </div>
@@ -118,6 +118,40 @@
         <div class="fb-comments" data-href="http://192.168.118.22:3000/details/<%= user_profile_video_view.id %>" data-width="700" data-numposts="5"></div>
     </div>
     <!----------------------------------------------------------->
+    <!-- Introduction about contact  -->
+    <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <hr class="my-4">
+          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+          <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+          <p>
+            <a href="mailto:bangnxse04011@fpt.edu.vn">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--------------------------------------------------- -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../public/vendor/jquery/jquery.min.js"></script>
+  <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../public/vendor/scrollreveal/scrollreveal.min.js"></script>
+  <script src="../public/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../public/js/creative.min.js"></script>
 </body>
 
 </html>

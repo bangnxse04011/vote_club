@@ -11,21 +11,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/find_by_name', function(req, res, next) {
-  let video_array;
   let user_id = req.session.user_id;
   let name_search = req.query.name_search;
-  db_manager_video.findAll({
-    where: {
-      full_name: {
-        ilike: '%' + name_search
-      }
-    },
-    plain: false
-  }).then(video => {
-    video_array = video.map((r) => (r.toJSON()));
-  }).catch(function (err) {
-    console.log(err);
-  });
   // Check if user login
   if(user_id) {
     db_account.findOne({
@@ -33,18 +20,43 @@ router.get('/find_by_name', function(req, res, next) {
         id_user: user_id
       }
     }).then(account => {
-      res.render('search' , {
-        title : 'Mic On',
-        user_name : account.fullName,
-        link_login_or_logout : '/log_out',
-        data_video_array : video_array
+      db_manager_video.findAll({
+        where: {
+          full_name: {
+            ilike: '%' + name_search
+          }
+        },
+        plain: false
+      }).then(video => {
+        let video_array = video.map((r) => (r.toJSON()));
+        res.render('search' , {
+          title : 'Mic On',
+          user_name : account.fullName,
+          link_login_or_logout : '/log_out',
+          data_video_array : video_array,
+          name_search_res : req.query.name_search
+        });
+      }).catch(function (err) {
+        console.log(err);
       });
     }).catch(function (err) {
       console.log(err);
     });
   //---------------------------------------------
   } else {
-    res.render('search', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' , data_video_array : video_array });
+    db_manager_video.findAll({
+      where: {
+        full_name: {
+          ilike: '%' + name_search
+        }
+      },
+      plain: false
+    }).then(video => {
+      let video_array = video.map((r) => (r.toJSON()));
+      res.render('search', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' , data_video_array : video_array, name_search_res : req.query.name_search });
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 });
 
