@@ -69,7 +69,7 @@ passport.use(new passportfb(
   {
     clientID: "418017485293597",
     clientSecret: "1a3d43fda924f8283e8ce614e91e9ca7",
-    callbackURL: "http://192.168.118.4:3000/authen/fb/cb",
+    callbackURL: "http://192.168.118.22:3000/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
