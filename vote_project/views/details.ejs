@@ -12,7 +12,7 @@
     </title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="icon" href="icon.ico">
+    <link rel="icon" href="/icon.ico">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
     <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -71,67 +71,33 @@
     <div class="container" style="margin-top:5%">
         <div class="row">
             <div class="col-xs-12 col-md-8">
-                <div class="row">
-                    <iframe width="100%" height="80%" src="https://www.youtube.com/embed/EV-91JV4Fws" frameborder="0" allow=" encrypted-media"
-                        allowfullscreen></iframe>
+                <div class="row rowsecond">
+                    <iframe width="100%" height="80%" src="https://www.youtube.com/embed/<%= user_profile_video_view.link_video %>" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="row rowsecond">
                     <h1>
-                        <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
+                        <span><%= user_profile_video_view.full_name %></span>
                     </h1>
                 </div>
                 <div class="row rowsecond">
-                    <span>Các thí sinh của chúng ta đã có mặt từ 7h30 và cùng tập chung trong phòng chờ , tại đây các bạn được
-                        giao lưu du ca với nhau , tạo không khí vui vẻ, không áp lưc trước khi chính thức tham gia vào phòng
-                        casting ! Hãy cùng nhau nhìn lại những khoảnh khắc vui tươi và tuyệt vời này nhé</span>
-
+                    <span><%= user_profile_video_view.description %></span>
                 </div>
-
             </div>
             <div class="col-xs-6 col-md-4">
-                <div class="row ">
-                    <div class="col-xs-6 col-md-6">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
-                        </a>
+                <% data_video_array.forEach(function(data_video) { %>
+                    <div class="row rowsecond">
+                        <div class="col-xs-6 col-md-6">
+                                <a href="/details/<%= data_video.id %>">
+                                <img src="https://img.youtube.com/vi/<%= data_video.link_video %>/default.jpg" alt="Smiley face" height="auto" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="line-height:200%;">
+                            <a href="/details/<%= data_video.id %>">
+                                <span><%= data_video.full_name %></span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
-                        </a>
-                    </div>
-
-
-                </div>
-                <div class="row rowsecond">
-                    <div class="col-xs-6 col-md-6">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
-                        </a>
-                    </div>
-
-
-                </div>
-                <div class="row rowsecond">
-                    <div class="col-xs-6 col-md-6">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                        <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                            <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
-                        </a>
-                    </div>
-
-
-                </div>
-
+                <% }); %>
             </div>
         </div>
     </div>

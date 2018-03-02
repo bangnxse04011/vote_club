@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
         plain: false
       }).then(video => {
         let video_array = video.map((r) => (r.toJSON()));
-        console.log(video_array);
         res.render('index' , {
           title : 'Mic On',
           user_name : account.fullName,
@@ -54,26 +53,59 @@ router.get('/details/:id', function(req, res, next) {
   /** 
    * Check when user login to fb from session
   */
- let user_id = req.session.user_id;
- //---------------------------------------------
- if(user_id) {
-  db_account.findOne({
+  let user_profile_video;
+  let id_video = req.params['id'];
+  console.log(id_video + "---------------------------");
+  // find link video form db
+  db_manager_video.findOne({
     where : {
-      id_user: user_id
+      id: id_video
     }
+  }).then(link_video => {
+    user_profile_video = link_video._previousDataValues;
+  });
+
+  //---------------------------------------------
+  let user_id = req.session.user_id;
+  if(user_id) {
+    db_account.findOne({
+      where : {
+        id_user: user_id
+      }
     }).then(account => {
+      db_manager_video.findAll({
+        plain: false
+      }).then(video => {
+        let video_array = video.map((r) => (r.toJSON()));
         res.render('details' , {
           title : 'Mic On',
           user_name : account.fullName,
           link_login_or_logout : '/log_out',
-          data_video_array : video_array
+          data_video_array : video_array,
+          user_profile_video_view : user_profile_video
         });
+      }).catch(function (err) {
+        console.log(err);
+      });
     }).catch(function (err) {
       console.log(err);
     });
  //---------------------------------------------
   } else {
-    res.render('details', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' });
+    db_manager_video.findAll({
+      plain: false
+    }).then(video => {
+      let video_array = video.map((r) => (r.toJSON()));
+      res.render('details', { 
+        title: 'Mic On' , 
+        user_name : 'Login' , 
+        link_login_or_logout : '/authen/fb' , 
+        data_video_array : video_array,
+        user_profile_video_view : user_profile_video
+      });
+    }).catch(function (err) {
+      console.log(err);
+    });
   }
 });
 
