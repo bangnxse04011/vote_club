@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
  * Config DB connect to postgres
  */
 const db_connection = new Sequelize('vote_club', 'bangnx1', 'bangnx1', {
-    host: '192.168.118.4',
+    host: '192.168.118.22',
     dialect: 'postgres',
   
     pool: {
