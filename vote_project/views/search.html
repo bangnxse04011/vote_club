@@ -13,83 +13,88 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="icon" href="/icon.ico">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
         rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
         rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="../public/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="../public/css/creative.min.css" rel="stylesheet">
 
 
 </head>
 
 <body>
-
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="mainNav">
+        <div class="container">
+            <a style="color : #f05f40" class="navbar-brand js-scroll-trigger" href="/">Mic On</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm theo tên">
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:1em;margin-right:1em;">
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color : black !important" class="nav-link js-scroll-trigger" href="#about">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color : black !important" class="nav-link js-scroll-trigger" href="#services">Nhà Tài Trợ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color : black !important" class="nav-link js-scroll-trigger" href="#portfolio">Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color : black !important" class="nav-link js-scroll-trigger" href=<%=link_login_or_logout %>>
+                            <%= user_name %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 5% ">
 
         <div class="row rowsecond">
             <div class="col-xs-6 col-md-6">
                 <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
+                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/hqdefault.jpg" alt="" height="auto" width="100%">
                 </a>
             </div>
             <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
+                <a class="nohover" href="https://www.youtube.com/embed/EV-91JV4Fws">
                     <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
+                    
                 </a>
             </div>
-
-
         </div>
         <div class="row rowsecond">
             <div class="col-xs-6 col-md-6">
                 <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
+                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/hqdefault.jpg" alt="" height="auto" width="100%">
                 </a>
             </div>
             <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
+                <a class="nohover" href="https://www.youtube.com/embed/EV-91JV4Fws">
                     <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
+                    
                 </a>
             </div>
-
-
         </div>
-        <div class="row rowsecond">
-            <div class="col-xs-6 col-md-6">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
-                </a>
-            </div>
-
-
-        </div>
-        <div class="row rowsecond">
-            <div class="col-xs-6 col-md-6">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <img src="https://img.youtube.com/vi/EV-91JV4Fws/default.jpg" alt="Smiley face" height="auto" width="100%">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-6" style="line-height:200%;">
-                <a href="https://www.youtube.com/embed/EV-91JV4Fws">
-                    <span>Thí Sinh Nguyễn Văn A - SBD 01</span>
-                </a>
-            </div>
-
-
-        </div>
+       
     </div>
 
 </body>
