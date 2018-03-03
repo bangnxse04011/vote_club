@@ -7,7 +7,17 @@ const Op = Sequelize.Op;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.end("okie" + req.session.user_id);
+  db_manager_video.findAll({
+    attributes: [
+      [Sequelize.fn('DISTINCT', Sequelize.col('full_name')) ,'full_name'],
+    ],
+    plain: false
+  }).then(video => {
+    let video_array = video.map((r) => (r.toJSON()));
+    res.end(JSON.stringify(video_array));
+  }).catch(function (err) {
+    console.log(err);
+  });
 });
 
 router.get('/find_by_name', function(req, res, next) {
@@ -23,7 +33,7 @@ router.get('/find_by_name', function(req, res, next) {
       db_manager_video.findAll({
         where: {
           full_name: {
-            ilike: '%' + name_search
+            like: '%' + name_search + '%'
           }
         },
         plain: false
@@ -47,7 +57,7 @@ router.get('/find_by_name', function(req, res, next) {
     db_manager_video.findAll({
       where: {
         full_name: {
-          ilike: '%' + name_search
+          like: '%' + name_search + '%'
         }
       },
       plain: false
