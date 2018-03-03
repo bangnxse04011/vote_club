@@ -104,8 +104,8 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
                         <img src="/img/heart.png" alt="Smiley face" height="100%">
-                        <a style="font-size: 1.2em"> Bình chọn </a>
-                        <span class="w3-badge" style="font-size:1vw">1</span>
+                        <a href="/users/manager_like/<%= user_profile_video_view.id %>" style="font-size: 1.2em" id="like_manager"> Bình chọn </a>
+                        <span class="w3-badge" style="font-size:1vw">0</span>
                     </div>
                     <div class="col-md-1">
                         <div style="margin-right: 10px;" class="fb-share-button" data-href="http://<%= host %>:3000/details/<%= user_profile_video_view.id %>"
@@ -179,6 +179,8 @@
     <script src="../public/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../public/js/creative.min.js"></script>
     <script src="/js/suggestsearch.js"></script>
+    <script src="/js/manager.js"></script>
+    <script lang="javascript">(function() {var pname = ( (document.title !='')? document.title : ((document.querySelector('h1') != null)? document.querySelector('h1').innerHTML : '') );var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async=1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=265b162ab4d1bd8e7772a553d17f4e64&data=eyJzc29faWQiOjUzNDE0NDUsImhhc2giOiJhY2FiMjhhY2NiNTJjZTU5NzlmM2E3NzMwZDg0MzEwYSJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>	
 </body>
 
 </html>

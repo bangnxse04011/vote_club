@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db_account = require('../public/js/db_table_account');
 var db_manager_video = require('../public/js/db_table_manager_video');
+var db_manager_like = require('../public/js/db_table_manager_like');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -67,6 +68,23 @@ router.get('/find_by_name', function(req, res, next) {
     }).catch(function (err) {
       console.log(err);
     });
+  }
+});
+
+/**
+ * Method manager like and count total like.
+ */
+router.get('/manager_like/:id' ,  function(req, res, next) {
+  let user_id = req.session.user_id;
+  if(user_id == null || user_id == '') {
+    res.redirect('/authen/fb');
+  } else {
+    let id_video = req.params['id'];
+    db_manager_like.create({
+      id_video : id_video,
+      id_user : user_id
+    });
+    res.redirect('/details/' + id_video);
   }
 });
 
