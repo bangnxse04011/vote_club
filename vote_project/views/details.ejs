@@ -48,12 +48,12 @@
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <form action="/users/find_by_name" method="GET">
+            <form action="/users/find_by_name" autocomplete="off" method="GET">
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <div class="">
-                                <input type="text" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
+                            <div class="autocomplete" style="width:300px;">
+                                <input type="text" id="inputsearch" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
                             </div>
                         </li>
                         <li class="nav-item" style="margin-left:1em;margin-right:1em;">
@@ -178,6 +178,7 @@
     <script src="../public/vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../public/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../public/js/creative.min.js"></script>
+    <script src="/js/suggestsearch.js"></script>
 </body>
 
 </html>
