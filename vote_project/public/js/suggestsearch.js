@@ -106,7 +106,7 @@ function autocomplete(inp, arr) {
   {
     var list_data_user_name;
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://192.168.118.8:3000/users/", false);
+    xmlhttp.open("GET","http://localhost:3000/users/", false);
     xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
           list_data_user_name = xmlhttp.responseText;
