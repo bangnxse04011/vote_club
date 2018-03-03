@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var db_account = require('../public/js/db_table_account');
 var db_manager_video = require('../public/js/db_table_manager_video');
+var util = require('../public/js/unit');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   /** 
@@ -53,6 +55,7 @@ router.get('/details/:id', function(req, res, next) {
   /** 
    * Check when user login to fb from session
   */
+  let host = util._DB_HOST();
   let user_profile_video;
   let id_video = req.params['id'];
   console.log(id_video + "---------------------------");
@@ -78,6 +81,7 @@ router.get('/details/:id', function(req, res, next) {
       }).then(video => {
         let video_array = video.map((r) => (r.toJSON()));
         res.render('details' , {
+          host : host,
           title : 'Mic On',
           user_name : account.fullName,
           link_login_or_logout : '/log_out',
@@ -97,6 +101,7 @@ router.get('/details/:id', function(req, res, next) {
     }).then(video => {
       let video_array = video.map((r) => (r.toJSON()));
       res.render('details', { 
+        host : host,
         title: 'Mic On' , 
         user_name : 'Login' , 
         link_login_or_logout : '/authen/fb' , 

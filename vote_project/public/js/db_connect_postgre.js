@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
+const util = require('./unit');
 
 /**
  * Config DB connect to postgres
  */
-const db_connection = new Sequelize('vote_club', 'bangnx1', 'bangnx1', {
-    host: '192.168.118.22',
+const db_connection = new Sequelize(util._DB_NAME(), util._DB_USER(), util._DB_PASS(), {
+    host: util._DB_HOST(),
     dialect: 'postgres',
   
     pool: {

@@ -19,7 +19,8 @@
     "sequelize": "*",
     "pg": "*",
     "pg-hstore": "*",
-    "ejs-lint": "*"
+    "ejs-lint": "*",
+    "node-env-file" : "*"
   },
   "main": "app.js",
   "devDependencies": {},

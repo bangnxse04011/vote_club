@@ -8,6 +8,7 @@ var passport = require('passport');
 var passportfb = require('passport-facebook').Strategy;
 var session = require('express-session');
 var db = require('./public/js/db_table_account');
+const util = require('./public/js/unit');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -67,9 +68,9 @@ app.use(function(req, res, next) {
  */
 passport.use(new passportfb(
   {
-    clientID: "418017485293597",
-    clientSecret: "1a3d43fda924f8283e8ce614e91e9ca7",
-    callbackURL: "http://192.168.118.22:3000/authen/fb/cb",
+    clientID: util._CLIENT_ID_FB(),
+    clientSecret: util._CLIENT_SECREATE(),
+    callbackURL: "http://"+ util._DB_HOST() +"/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
