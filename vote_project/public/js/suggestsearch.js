@@ -105,15 +105,15 @@ function autocomplete(inp, arr) {
   function find_all_user_name(call_back_function)
   {
     var list_data_user_name;
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://localhost:3000/users/", false);
-    xmlhttp.onreadystatechange=function(){
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          list_data_user_name = xmlhttp.responseText;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if (xhttp.readyState == 4 && xhttp.status == 200){
+          list_data_user_name = xhttp.responseText;
           call_back_function(list_data_user_name);
         }
     }
-    xmlhttp.send();
+    xhttp.open("GET","http://192.168.118.10:3000/users/");
+    xhttp.send();
   }
 
   // Using call back function
