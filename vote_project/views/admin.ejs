@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<body>
+
+  <div class="container w3-center w3-panel w3-green">
+    <h2 class="w3-opacity">  Admin Quản lý</h2>
+  </div>
+
+  <div class="container w3-bar w3-green">
+    <button class="w3-bar-item w3-button w3-large" >Trang chủ</button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('manager')">Phân Quyền</button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('upload')">Đăng Bài</button>
+    <button class="w3-bar-item w3-button w3-large" onclick="openCity('update')">Chỉnh Sửa</button>
+    <button class="w3-bar-item w3-button w3-large" >Xuất dữ liệu Email</button>
+    <button class="w3-bar-item w3-button w3-large w3-right">Đăng xuất</button>
+  </div>
+
+<div id="manager" class="container w3-display-container city" style="display:none">
+  <h2>London</h2>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="upload" class="container w3-display-container city" style="display:none">
+  <h2>Paris</h2>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="update" class="container w3-display-container city" style="display:none">
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+  function openCity(cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(cityName).style.display = "block";  
+  }
+</script>
+</body>
+</html>
