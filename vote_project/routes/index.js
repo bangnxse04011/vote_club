@@ -70,23 +70,6 @@ router.get('/details/:id', function(req, res, next) {
   }).then(link_video => {
     user_profile_video = link_video._previousDataValues;
   });
-
-  //Find total like and user login like video
-  db_manager_like.findAll({
-    where : {
-      id_video: id_video
-    }
-  }).then(manager_like => {
-    let manager_like_video = manager_like.map((r) => (r.toJSON()));
-    total_like = manager_like_video.length;
-    for(var i = 0 ; i < manager_like_video.length ; i++) {
-      if(manager_like[i]['id_user'] == user_id ) {
-        user_like_video_id = true;
-        link_avata_button_like = '/img/like.png';
-        break;
-      }
-    }
-  });
   //---------------------------------------------
   let user_id = req.session.user_id;
   if(user_id) {
@@ -99,20 +82,34 @@ router.get('/details/:id', function(req, res, next) {
         plain: false
       }).then(video => {
         let video_array = video.map((r) => (r.toJSON()));
-        res.render('details' , {
-          host : host,
-          title : 'Mic On',
-          user_name : account.fullName,
-          link_login_or_logout : '/log_out',
-          data_video_array : video_array,
-          user_profile_video_view : user_profile_video,
-          total_like : total_like,
-          user_like_video_id  : user_like_video_id,
-          link_avata_button_like : link_avata_button_like
-        }); 
-      }).catch(function (err) {
-        console.log(err);
-      });
+        //Find total like and user login like video
+        db_manager_like.findAll({
+          where : {
+            id_video: id_video
+          }
+        }).then(manager_like => {
+          let manager_like_video = manager_like.map((r) => (r.toJSON()));
+          total_like = manager_like_video.length;
+          for(var i = 0 ; i < manager_like_video.length ; i++) {
+            if(manager_like[i]['id_user'] == user_id ) {
+              user_like_video_id = true;
+              link_avata_button_like = '/img/like.png';
+              break;
+            }
+          }
+          res.render('details' , {
+            host : host,
+            title : 'Mic On',
+            user_name : account.fullName,
+            link_login_or_logout : '/log_out',
+            data_video_array : video_array,
+            user_profile_video_view : user_profile_video,
+            total_like : total_like,
+            user_like_video_id  : user_like_video_id,
+            link_avata_button_like : link_avata_button_like
+          }); 
+        });
+      })
     }).catch(function (err) {
       console.log(err);
     });
@@ -122,16 +119,24 @@ router.get('/details/:id', function(req, res, next) {
       plain: false
     }).then(video => {
       let video_array = video.map((r) => (r.toJSON()));
-      res.render('details', { 
-        host : host,
-        title: 'Mic On' , 
-        user_name : 'Login' , 
-        link_login_or_logout : '/authen/fb' , 
-        data_video_array : video_array,
-        user_profile_video_view : user_profile_video,
-        total_like : total_like,
-        user_like_video_id  : user_like_video_id,
-        link_avata_button_like : link_avata_button_like
+      db_manager_like.findAll({
+        where : {
+          id_video: id_video
+        }
+      }).then(manager_like => {
+        let manager_like_video = manager_like.map((r) => (r.toJSON()));
+        total_like = manager_like_video.length;
+        res.render('details', { 
+          host : host,
+          title: 'Mic On' , 
+          user_name : 'Login' , 
+          link_login_or_logout : '/authen/fb' , 
+          data_video_array : video_array,
+          user_profile_video_view : user_profile_video,
+          total_like : total_like,
+          user_like_video_id  : user_like_video_id,
+          link_avata_button_like : link_avata_button_like
+        });
       });
     }).catch(function (err) {
       console.log(err);
