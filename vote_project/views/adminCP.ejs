@@ -22,13 +22,13 @@ h1{
   width:350px;
   padding:40px 30px;
   background:#eee;
-  @include border-radius(4px);
+
   margin:auto;
   position: absolute;
   left: 0;
   right: 0;
   top:10%;
-  @include translateY(-50%);
+
 }
 .form-group{
   position: relative;
@@ -42,11 +42,7 @@ h1{
   background:#fff;
   color:#666;
   border:2px solid #ddd;
-  @include border-radius(4px);
-    &:focus, &:focus + .fa{
-      border-color:#10CE88;
-      color:#10CE88;
-    }
+
 }
 .form-group .fa{
   position: absolute;
@@ -54,13 +50,7 @@ h1{
   top:17px;
   color:#999;
 }
-.log-status.wrong-entry {
- @include animation( wrong-log 0.3s);
-}
-.log-status.wrong-entry .form-control, .wrong-entry .form-control + .fa {
-  border-color: #ed1c24;
-  color: #ed1c24;
-}
+
 .log-btn{
   background:#0AC986;
   dispaly:inline-block;
@@ -70,7 +60,7 @@ h1{
   color:#fff;
   text-decoration:none;
   border:none;
-  @include border-radius(4px);
+
 }
 
 .link{
@@ -79,10 +69,7 @@ h1{
   float:right;
   font-size:12px;
   margin-bottom:15px;
-  &:hover{
-    text-decoration: underline;
-    color:#8C918F;
-  }
+ 
 }
 .alert{
   display:none;
@@ -90,11 +77,7 @@ h1{
   color:#f00;
   float:left;
 }
-@include keyframes (wrong-log) {
-  0%, 100% { left: 0px;}
-  20% , 60%{left: 15px;}
-  40% , 80%{left: -15px;}
-}
+
     </style>
   </head>
 
@@ -116,19 +99,8 @@ h1{
 
 
   </div>
-  <script>
-  $(document).ready(function(){
-        $('.log-btn').click(function(){
-            $('.log-status').addClass('wrong-entry');
-           $('.alert').fadeIn(500);
-           setTimeout( "$('.alert').fadeOut(1500);",3000 );
-        });
-        $('.form-control').keypress(function(){
-            $('.log-status').removeClass('wrong-entry');
-        });
 
-    });
-  </script>
+ 
 </body>
 
 </html>
