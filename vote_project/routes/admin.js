@@ -19,10 +19,6 @@ router.get('/log_out' , function(req, res, next) {
  * Method check user login
  */
 router.post('/authen', function(req, res, next) {
-  let uname_session = req.session.uname;
-  if(uname_session == null || uname_session == '' || uname_session == "") {
-    res.redirect('/admin/');
-  }
   let uname = req.body.uname;
   let passwd = req.body.passwd;
   db_account_admin.findAll({
@@ -40,8 +36,11 @@ router.post('/authen', function(req, res, next) {
       //   password : passwd,
       //   status : 0
       // });
-      if(account.length > 0) 
+      if(account.length > 0) {
         res.redirect("/admin/cp");
+      } else {
+        res.redirect("/admin/");
+      }
       // } else {
         // let active = account_details['status'];
         // res.redirect("/cp");
