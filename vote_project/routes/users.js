@@ -76,15 +76,34 @@ router.get('/find_by_name', function(req, res, next) {
  */
 router.get('/manager_like/:id' ,  function(req, res, next) {
   let user_id = req.session.user_id;
+  let id_video = req.params['id'];
   if(user_id == null || user_id == '') {
     res.redirect('/authen/fb');
   } else {
-    let id_video = req.params['id'];
-    db_manager_like.create({
-      id_video : id_video,
-      id_user : user_id
+    // Check user unlike
+    db_manager_like.findAll({
+      where : {
+        id_video: id_video,
+        id_user : user_id
+      }
+    }).then(manager_like => {
+      let manager_like_video = manager_like.map((r) => (r.toJSON()));
+      if(manager_like_video.length > 0) {
+        db_manager_like.destroy({
+          where: {
+            id_video : id_video,
+            id_user : user_id
+          }
+        });
+        res.redirect('/details/' + id_video);
+      } else {
+        db_manager_like.create({
+          id_video : id_video,
+          id_user : user_id
+        });
+        res.redirect('/details/' + id_video);
+      }
     });
-    res.redirect('/details/' + id_video);
   }
 });
 

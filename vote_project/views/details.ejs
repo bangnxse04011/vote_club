@@ -103,9 +103,9 @@
                     </div>
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
-                        <img src="/img/heart.png" alt="Smiley face" height="100%">
+                        <img src="<%= link_avata_button_like %>" alt="Like" height="100%">
                         <a href="/users/manager_like/<%= user_profile_video_view.id %>" style="font-size: 1.2em" id="like_manager"> Bình chọn </a>
-                        <span class="w3-badge" style="font-size:1vw">0</span>
+                        <span class="w3-badge" style="font-size:1vw"><%= total_like %></span>
                     </div>
                     <div class="col-md-1">
                         <div style="margin-right: 10px;" class="fb-share-button" data-href="http://<%= host %>:3000/details/<%= user_profile_video_view.id %>"
