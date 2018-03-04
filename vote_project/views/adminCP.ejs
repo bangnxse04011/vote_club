@@ -4,103 +4,96 @@
   <style>
     @import "compass/css3";
     @import url(https://fonts.googleapis.com/css?family=Vibur);
-    *{
-  box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing:border-box;
-  font-family:arial;
-}
-body{background:green;}
-h1{
-  color:#ccc;
-  text-align:center;
-  font-family: 'Vibur', cursive;
-  font-size: 50px;
-}
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-family: arial;
+    }
+    body {
+      background: green;
+    }
+    h1 {
+      color: #ccc;
+      text-align: center;
+      font-family: 'Vibur', cursive;
+      font-size: 50px;
+    }
+    .login-form {
+      width: 350px;
+      padding: 40px 30px;
+      background: #eee;
 
-.login-form{
-  width:350px;
-  padding:40px 30px;
-  background:#eee;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10%;
 
-  margin:auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top:10%;
+    }
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .form-control {
+      width: 100%;
+      height: 50px;
+      border: none;
+      padding: 5px 7px 5px 15px;
+      background: #fff;
+      color: #666;
+      border: 2px solid #ddd;
 
-}
-.form-group{
-  position: relative;
-  margin-bottom:15px;
-}
-.form-control{
-  width:100%;
-  height:50px;
-  border:none;
-  padding:5px 7px 5px 15px;
-  background:#fff;
-  color:#666;
-  border:2px solid #ddd;
+    }
+    .form-group .fa {
+      position: absolute;
+      right: 15px;
+      top: 17px;
+      color: #999;
+    }
+    .log-btn {
+      background: #0AC986;
+      dispaly: inline-block;
+      width: 100%;
+      font-size: 16px;
+      height: 50px;
+      color: #fff;
+      text-decoration: none;
+      border: none;
 
-}
-.form-group .fa{
-  position: absolute;
-  right:15px;
-  top:17px;
-  color:#999;
-}
+    }
+    .link {
+      text-decoration: none;
+      color: #C6C6C6;
+      float: right;
+      font-size: 12px;
+      margin-bottom: 15px;
 
-.log-btn{
-  background:#0AC986;
-  dispaly:inline-block;
-  width:100%;
-  font-size:16px;
-  height:50px;
-  color:#fff;
-  text-decoration:none;
-  border:none;
-
-}
-
-.link{
-  text-decoration:none;
-  color:#C6C6C6;
-  float:right;
-  font-size:12px;
-  margin-bottom:15px;
- 
-}
-.alert{
-  display:none;
-  font-size:12px;
-  color:#f00;
-  float:left;
-}
-
-    </style>
-  </head>
-
+    }
+    .alert {
+      display: none;
+      font-size: 12px;
+      color: #f00;
+      float: left;
+    }
+  </style>
+</head>
 <body>
-
-  <div class="login-form">
-    <h1>ADMIN</h1>
-    <div class="form-group ">
-      <input type="text" class="form-control" placeholder="Username " id="UserName">
-      <i class="fa fa-user"></i>
-    </div>
-    <div class="form-group log-status">
-      <input type="password" class="form-control" placeholder="Password" id="Passwod">
-      <i class="fa fa-lock"></i>
-    </div>
-    <span class="alert">Invalid Credentials</span>
-  
-    <button type="button" class="log-btn">Log in</button>
-
-
-  </div>
-
- 
+  <form action="/admin/authen" method="POST">
+    <div class="login-form">
+        <h1>ADMIN</h1>
+        <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Username " name="uname" />
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="form-group log-status">
+          <input type="password" class="form-control" placeholder="Password" name="passwd" />
+          <i class="fa fa-lock"></i>
+        </div>
+        <span class="alert">Invalid Credentials</span>
+        <button type="submit" class="log-btn">Log in</button>
+      </div>
+  </form>
 </body>
 
 </html>
