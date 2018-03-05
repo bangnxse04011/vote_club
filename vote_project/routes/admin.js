@@ -125,4 +125,18 @@ router.get('/view_all', function(req, res, next) {
   });
 });
 
+router.get('/delete_acc/:id' , function(req, res, next) {
+  let uname_session = req.session.uname;
+  let id = req.params['id'];
+  if(uname_session == null || uname_session == '' || uname_session == "") {
+    res.redirect('/admin/');
+  }
+  db_account_admin.destroy({
+    where: {
+      id : id,
+    }
+  });
+  res.redirect("/admin/cp");
+});
+
 module.exports = router;

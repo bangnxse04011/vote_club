@@ -7,7 +7,7 @@ $(document).ready(function(){
           var data_users = JSON.parse(list_data_user_name);
           let str = "";
           for(var i = 0 ; i < data_users.length ; i++) {
-            str += "<tr> <td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td> <td><button class=' w3-button w3-black w3-medium w3-round-large'>Xóa Quyền Admin</button></td> </tr>";
+            str += "<tr> <td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td> <td><button class=' w3-button w3-black w3-medium w3-round-large'><a href='/admin/delete_acc/"+ data_users[i]['id'] +"'>Xóa Quyền Admin</a></button></td> </tr>";
           }
           $('#list_users').html(str);
         }
