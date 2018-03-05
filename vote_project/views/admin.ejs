@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Admin managerment</title>
+<title>Admin management</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,10 +33,35 @@
     <input class="w3-button w3-block w3-green" type="submit" value="Gửi"></p>
   </form>
 </div>
+<div class="w3-container ">
+    <table class="w3-table-all w3-centered w3-card-4">
+        <tr>
+          <th>Tên người dùng</th>
+          <th></th>
+          
+        </tr>
+        <tr>
+          <td style="vertical-align: middle" >Jill</td>
+          <td><button class=" w3-button w3-black w3-medium w3-round-large">Xóa quyền admin</button></td>
+        
+        </tr>
+        <tr>
+          <td style="vertical-align: middle" >Eve</td>
+          <td><button class="w3-button w3-black w3-medium w3-round-large">Xóa quyền admin</button></td>
+      
+        </tr>
+        <tr>
+          <td style="vertical-align: middle" >Adam</td>
+          <td><button class="w3-button w3-black w3-medium w3-round-large">Xóa quyền admin</button></td>
+        
+        </tr>
+      </table>
+    </div>
+</div>
 </div>
 
 <div id="upload" class="container w3-display-container city" style="display:none">
-  <form class="w3-container w3-card-4" action="/admin/add_view" method="GET">
+  <form class="w3-container w3-card-4 " action="/admin/add_view" method="GET">
     <p>
     <label>Tiêu đề</label>
     <input class="w3-input" type="text" name="title_video" /></p>
@@ -51,6 +76,21 @@
   </form>
 </div>
 <div id="update" class="container w3-display-container city" style="display:none">
+  
+
+      <form class="w3-container w3-card-4 " action="/admin/add_view" method="GET">
+        <p>
+        <label>ID của Youtube</label>
+        <input class="w3-input" type="text" name="id_video" /></p>
+        <p>
+        <label>Tiêu đề</label>
+        <input class="w3-input" type="text" name="title_video" /></p>
+        <p>
+        <label>Miêu tả</label>
+        <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
+        </br>
+        <input class="w3-button w3-green" type="submit" value="Lưu"></p>
+      </form>
   
 </div>
 <script>
