@@ -99,7 +99,6 @@ router.get('/add_view' , function(req, res, next) {
     }
   }).then(account => {
     let account_details = account.map((r) => (r.toJSON()));
-    console.log(account_details)
     db_manager_video.create({
       id_user: account_details.length + 1,
       link_video : id_video,
