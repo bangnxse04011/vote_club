@@ -108,4 +108,21 @@ router.get('/add_view' , function(req, res, next) {
     res.redirect("/admin/cp");
   });
 });
+
+/* GET users listing. */
+router.get('/view_all', function(req, res, next) {
+  let uname_session = req.session.uname;
+  if(uname_session == null || uname_session == '' || uname_session == "") {
+    res.redirect('/admin/');
+  }
+  db_account_admin.findAll({
+    plain: false
+  }).then(account => {
+    let account_details = account.map((r) => (r.toJSON()));
+    res.end(JSON.stringify(account_details));
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
 module.exports = router;
