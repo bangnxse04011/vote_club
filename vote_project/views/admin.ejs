@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>Admin managerment</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,36 +21,33 @@
 
 <div id="manager" class="container w3-display-container city" style="display:none">
 <div class="w3-panel">
-  <form class="w3-container w3-card-4">
+  <form class="w3-container w3-card-4" action="/admin/add_account" method="POST">
     <p>
     <label>Tài khoản</label>
-    <input class="w3-input" type="text"></p>
+    <input class="w3-input" type="text" name="uname" /></p>
     <p>
     <label>Mật Khẩu</label>
-    <input class="w3-input" type="password"></p>
+    <input class="w3-input" type="password" name="passwd" /></p>
     <p>
-    <label>Nhập lại mật khẩu</label>
-    <input class="w3-input" type="password"></p>
+    <label><%= message %></label>
     <input class="w3-button w3-block w3-green" type="submit" value="Gửi"></p>
- 
   </form>
 </div>
 </div>
 
 <div id="upload" class="container w3-display-container city" style="display:none">
-  <form class="w3-container w3-card-4">
+  <form class="w3-container w3-card-4" action="/admin/add_view" method="GET">
     <p>
     <label>Tiêu đề</label>
-    <input class="w3-input" type="text"></p>
+    <input class="w3-input" type="text" name="title_video" /></p>
     <p>
     <label>ID của Youtube</label>
-    <input class="w3-input" type="text"></p>
+    <input class="w3-input" type="text" name="id_video" /></p>
     <p>
     <label>Miêu tả</label>
-    <textarea class="w3-input" name="subject" placeholder="Write something.." ></textarea>
+    <textarea class="w3-input" name="subject" placeholder="Write something.." name="description" /></textarea>
     </br>
     <input class="w3-button w3-green" type="submit" value="Đăng"></p>
- 
   </form>
 </div>
 
