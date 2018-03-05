@@ -20,49 +20,38 @@
   </div>
 
 <div id="manager" class="container w3-display-container city" style="display:none">
-  
-<div class="w3-container">
-   
-    <table class="w3-table-all w3-centered ">
-      <tr>
-        <th >Tên Người Dùng</th>
-        <th></th>
-  
-      </tr>
-      <tr>
-        <td style="vertical-align: middle;">Jill</td>
-        <td><button class="w3-button w3-round-large w3-green  w3-medium">Chỉ định quản trị viên</button>
-           <button class="w3-button w3-round-large w3-green  w3-medium">Xóa Quản trị viên</button></td>
-  
-      </tr>
-      <tr>
-        <td style="vertical-align: middle;">Eve</td>
-        <td><button class="w3-button w3-round-large w3-green  w3-medium">Chỉ định quản trị viên</button>
-          <button class="w3-button w3-round-large w3-green  w3-medium">Xóa Quản trị viên</button></td>
+<div class="w3-panel">
+  <form class="w3-container w3-card-4">
+    <p>
+    <label>Tài khoản</label>
+    <input class="w3-input" type="text"></p>
+    <p>
+    <label>Mật Khẩu</label>
+    <input class="w3-input" type="password"></p>
+    <p>
+    <label>Nhập lại mật khẩu</label>
+    <input class="w3-input" type="password"></p>
+    <input class="w3-button w3-block w3-green" type="submit" value="Gửi"></p>
  
-     </tr>
-  
-      </tr>
-      <tr >
-        <td style="vertical-align: middle;">Adam</td>
-        <td><button class="w3-button w3-round-large w3-green  w3-medium">Chỉ định quản trị viên</button>
-          <button class="w3-button w3-round-large w3-green  w3-medium">Xóa Quản trị viên</button></td>
- 
-     </tr>
-  
-      </tr>
-    </table>
-  </div>
+  </form>
+</div>
 </div>
 
 <div id="upload" class="container w3-display-container city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="update" class="container w3-display-container city" style="display:none">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
+  <form class="w3-container w3-card-4">
+    <p>
+    <label>Tiêu đề</label>
+    <input class="w3-input" type="text"></p>
+    <p>
+    <label>ID của Youtube</label>
+    <input class="w3-input" type="text"></p>
+    <p>
+    <label>Miêu tả</label>
+    <textarea class="w3-input" name="subject" placeholder="Write something.." ></textarea>
+    </br>
+    <input class="w3-button w3-green" type="submit" value="Đăng"></p>
+ 
+  </form>
 </div>
 
 <script>
