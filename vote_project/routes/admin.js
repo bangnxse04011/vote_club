@@ -86,19 +86,26 @@ router.post('/add_account' , function(req, res, next) {
  * Method add video
 */
 router.get('/add_view' , function(req, res, next) {
-  let title_video = req.params['title_video'];
-  let id_video = req.params['id_video'];
-  let description = req.params['description'];
+  let title_video = req.query.title_video;
+  let id_video = req.query.id_video;
+  let description = req.query.description;
   let uname_session = req.session.uname;
   if(uname_session == null || uname_session == '' || uname_session == "") {
     res.redirect('/admin/');
   }
-  db_manager_video.create({
-    id_user: '1',
-    link_video : id_video,
-    description : description,
-    full_name : title_video
+  db_account_admin.findAll({
+    where : {
+      username: uname_session
+    }
+  }).then(account => {
+    let account_details = account.map((r) => (r.toJSON()));
+    db_manager_video.create({
+      id_user: account_details.id,
+      link_video : id_video,
+      description : description,
+      full_name : title_video
+    });
+    res.redirect("/admin/cp");
   });
-  res.redirect("/admin/cp");
 });
 module.exports = router;
