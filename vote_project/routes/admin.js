@@ -104,7 +104,6 @@ router.get('/add_view' , function(req, res, next) {
       link_video : id_video,
       description : description,
       full_name : title_video
-      // dob : "1996-12-12 19:46:55+07"
     });
     res.redirect("/admin/cp");
   });
