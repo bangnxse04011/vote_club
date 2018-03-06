@@ -109,6 +109,30 @@ router.get('/add_view' , function(req, res, next) {
   });
 });
 
+/**
+ * Update video
+ */
+router.get('/update_video' , function(req, res, next) {
+  let id_video = req.query.id;
+  let description = req.query.description;
+  let uname_session = req.session.uname;
+  if(uname_session == null || uname_session == '' || uname_session == "") {
+    res.redirect('/admin/');
+  }
+  db_manager_video.update({
+    description: description
+  },
+  { 
+    where: 
+    { 
+      id: id_video
+    } 
+  }).then(account => {
+    res.redirect("/admin/cp");
+  });
+});
+
+
 /* GET users listing. */
 router.get('/view_all', function(req, res, next) {
   let uname_session = req.session.uname;

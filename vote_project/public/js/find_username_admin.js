@@ -12,6 +12,6 @@ $(document).ready(function(){
           $('#list_users').html(str);
         }
     }
-    xhttp.open("GET","http://192.168.118.6:3000/admin/view_all");
+    xhttp.open("GET","http://192.168.118.17:3000/admin/view_all");
     xhttp.send();
   });
