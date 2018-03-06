@@ -79,16 +79,14 @@
 
     <form class="w3-container w3-card-4" action="/admin/add_view" method="GET">
       <h1 style="text-shadow:1px 1px 0 #444">Chỉnh sửa</h1>
+      <input type="text" id="id_video" hidden />
       <p>
         <label>Tiêu đề</label>
-        <div class="w3-dropdown-hover" >
-            <button class="w3-button w3-card-4">Chọn video cần sửa</button>
-            <div  class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="#" class="w3-bar-item w3-button">Link 1</a>
-              <a href="#" class="w3-bar-item w3-button">Link 2</a>
-              <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            </div>
-          </div>
+        <div class="w3-dropdown-hover">
+          <select class="w3-button w3-card-4" id="link_video"> 
+            <option value="">--Chọn video cần sửa--</option>
+          </select>
+        </div>
       </p>
       <p>
         <label>Miêu tả</label>
@@ -97,9 +95,10 @@
         <input class="w3-button w3-green" type="submit" value="Lưu">
       </p>
     </form>
-<div style="height:40em;">
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EV-91JV4Fws" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+    <div style="height:40em;">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EV-91JV4Fws" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
   </div>
   <script>
     function openCity(cityName) {

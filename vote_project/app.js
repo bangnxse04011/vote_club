@@ -12,7 +12,10 @@ const util = require('./public/js/unit');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var login = require('./routes/login')
+var login = require('./routes/login');
+var admin = require('./routes/admin');
+var admin_manager = require('./routes/admin_managers');
+
 var users_id_user = '';
 
 var app = express();
@@ -38,13 +41,21 @@ app.use(session({secret: 'ssshhhhh'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+/**
+ *  Create router path
+ */
 app.use('/', index);
 app.use('/users', users);
 app.use('/authen' , login);
+app.use('/admin' , admin);
+app.use('/admin/managers' , admin_manager);
 
+/** 
+ * Create authen using facebook
+ */
 app.get('/authen/fb' , passport.authenticate('facebook' , {scope : ['email']}));
 
-app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '/login',session:false,auth_type: 'reauthenticate' }),
+app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '/authen/fb',session:false,auth_type: 'reauthenticate' }),
   function(req, res) {
     // Successful authentication, redirect home.
     req.session.user_id = users_id_user;
@@ -70,7 +81,7 @@ passport.use(new passportfb(
   {
     clientID: util._CLIENT_ID_FB(),
     clientSecret: util._CLIENT_SECREATE(),
-    callbackURL: "http://192.168.118.10:3000/authen/fb/cb",
+    callbackURL: "http://localhost:3000/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
