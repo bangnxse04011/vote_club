@@ -114,12 +114,14 @@ router.get('/add_view' , function(req, res, next) {
  */
 router.get('/update_video' , function(req, res, next) {
   let id_video = req.query.id;
+  let full_name = req.query.full_name;
   let description = req.query.description;
   let uname_session = req.session.uname;
   if(uname_session == null || uname_session == '' || uname_session == "") {
     res.redirect('/admin/');
   }
   db_manager_video.update({
+    full_name : full_name,
     description: description
   },
   { 
