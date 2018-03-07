@@ -12,7 +12,7 @@ $(document).ready(function(){
           $('#link_video').html(str);
         }
     }
-    xhttp.open("GET","http://192.168.118.5:3000/admin/managers/find_all");
+    xhttp.open("GET","http://45.124.65.190:3000/admin/managers/find_all");
     xhttp.send();
 
     /**

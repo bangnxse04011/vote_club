@@ -81,7 +81,7 @@ passport.use(new passportfb(
   {
     clientID: util._CLIENT_ID_FB(),
     clientSecret: util._CLIENT_SECREATE(),
-    callbackURL: "http://192.168.118.5:3000/authen/fb/cb",
+    callbackURL: "http://45.124.65.190:3000/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
   (accessToken,refreshToken,profile,done) => {
