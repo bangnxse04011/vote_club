@@ -119,6 +119,10 @@
                     </div>
 
                 </div>
+                <div class=" row rowsecond container" style="margin-top:5%">
+                        <div class="fb-comments" data-href="http://<%= host %>:3000/details/<%= user_profile_video_view.id %>" data-width="700"
+                            data-numposts="5"></div>
+                    </div>
             </div>
             <div class="col-xs-6 col-md-4">
                 <% data_video_array.forEach(function(data_video) { %>
@@ -141,10 +145,7 @@
         </div>
     </div>
     <!-- ADD comment to facebok -->
-    <div class="container" style="margin-top:5%">
-        <div class="fb-comments" data-href="http://<%= host %>:3000/details/<%= user_profile_video_view.id %>" data-width="700"
-            data-numposts="5"></div>
-    </div>
+   
     <!----------------------------------------------------------->
     <!-- Introduction about contact  -->
     <section id="contact">
