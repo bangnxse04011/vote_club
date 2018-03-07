@@ -46,7 +46,7 @@ router.get('/cp', function(req, res, next) {
   if(uname_session == null || uname_session == '' || uname_session == "") {
     res.redirect('/admin/');
   }
-  res.render("admin" , { message : "" });
+  res.render("admin" , { title : "Admin manager", status : req.session.status });
 });
 
 /** 
@@ -161,12 +161,17 @@ router.get('/delete_acc/:id' , function(req, res, next) {
   if(uname_session == null || uname_session == '' || uname_session == "") {
     res.redirect('/admin/');
   }
-  db_account_admin.destroy({
-    where: {
-      id : id,
-    }
-  });
-  res.redirect("/admin/cp");
+  let status =  req.session.status;
+  if(status == -1 || status == '-1') {
+    db_account_admin.destroy({
+      where: {
+        id : id,
+      }
+    });
+    res.redirect("/admin/cp");
+  } else {
+    res.redirect("/admin/cp");
+  }
 });
 
 module.exports = router;

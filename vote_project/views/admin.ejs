@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Admin management</title>
+<title><%= title %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,10 +37,7 @@
           <label>Mật Khẩu</label>
           <input class="w3-input" type="password" name="passwd" />
         </p>
-
-        <label>
-          <%= message %>
-        </label>
+        <span id="status" style="display: none"><%= status %></span>
         <input class="w3-button w3-block w3-green" type="submit" value="Gửi">
         </p>
       </form>

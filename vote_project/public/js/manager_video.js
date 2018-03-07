@@ -3,7 +3,7 @@ $(document).ready(function(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange=function(){
         if (xhttp.readyState == 4 && xhttp.status == 200){
-            list_data_video = xhttp.responseText;
+          list_data_video = xhttp.responseText;
           var data_video = JSON.parse(list_data_video);
           let str = "<option value>--Chọn video cần sửa--</option>";
           for(var i = 0 ; i < data_video.length ; i++) {
@@ -12,7 +12,7 @@ $(document).ready(function(){
           $('#link_video').html(str);
         }
     }
-    xhttp.open("GET","http://localhost:3000/admin/managers/find_all");
+    xhttp.open("GET","http://192.168.118.5:3000/admin/managers/find_all");
     xhttp.send();
 
     /**

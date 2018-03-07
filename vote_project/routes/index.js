@@ -144,4 +144,20 @@ router.get('/details/:id', function(req, res, next) {
   }
 });
 
+/* GET users listing. */
+router.get('/view_all', function(req, res, next) {
+  let uname_session = req.session.uname;
+  if(uname_session == null || uname_session == '' || uname_session == "") {
+    res.redirect('/admin/');
+  }
+  db_account.findAll({
+    plain: false
+  }).then(account => {
+    let account_details = account.map((r) => (r.toJSON()));
+    res.end(JSON.stringify(account_details));
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
 module.exports = router;
