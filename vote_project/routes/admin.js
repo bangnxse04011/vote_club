@@ -29,6 +29,7 @@ router.post('/authen', function(req, res, next) {
       }
     }).then(account => {
       let account_details = account.map((r) => (r.toJSON()));
+      req.session.status = account_details[0]['status']
       req.session.uname = uname;
       if(account.length > 0) {
         res.redirect("/admin/cp");
@@ -151,6 +152,9 @@ router.get('/view_all', function(req, res, next) {
   });
 });
 
+/**
+ * DELETE acc
+ */
 router.get('/delete_acc/:id' , function(req, res, next) {
   let uname_session = req.session.uname;
   let id = req.params['id'];

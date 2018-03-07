@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const Manager_video = connection_db.define('manager_video', {
     id_user: { type: Sequelize.STRING },
     link_video : { type: Sequelize.STRING },
-    description : { type: Sequelize.STRING },
+    description : { type: Sequelize.STRING(10485760) },
     full_name : { type: Sequelize.STRING },
     dob : { type: Sequelize.DATE }
 });
