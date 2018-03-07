@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="icon" href="icon.ico">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link rel="icon" href="icon.ico">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Plugin CSS -->
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
-    
-  </head>
+  <!-- Custom styles for this template -->
+  <link href="css/creative.min.css" rel="stylesheet">
 
-  <body id="page-top">
+</head>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="mainNav">
-      <div class="container">
-        <a style="color : #f05f40" class="navbar-brand js-scroll-trigger" href="/">Mic On</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="mainNav">
+    <div class="container">
+      <a style="color : #f05f40" class="navbar-brand js-scroll-trigger" href="/">Mic On</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <!-- Search by name-->
-      
         <form action="/users/find_by_name" autocomplete="off" method="GET">
-          <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-             
+              <li class="nav-item">
+                <div class="autocomplete" style="width:300px;">
+                  <input type="text" id="inputsearch" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
+                </div>
+              </li>
+              <li class="nav-item" style="margin-left:1em;margin-right:1em;">
+                <button type="submit" class="w3-btn w3-large w3-grey w3-round-xlarge ">Search</button>
+              </li>
             </ul>
-          </div> -->
-    
-        
+          </div>
+        </form>
         <!---->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <div class="autocomplete" style="width:300px;">
-                    <input type="text" id="inputsearch" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
-                  </div>
-                </li>
-                <li class="nav-item" style="margin-left:1em;margin-right:1em;">
-                  <button type="submit" class="w3-btn w3-large w3-grey w3-round-xlarge ">Search</button>
-                </li>
             <li class="nav-item">
               <a style="color : black !important" class="nav-link js-scroll-trigger" href="#about">Giới Thiệu</a>
             </li>
@@ -70,139 +72,148 @@
             </li>
           </ul>
         </div>
-      </form>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex" style="margin-top:3%">
-      <div class="container my-auto">
-        
-      </div>
-    </header>
+  <header class="masthead text-center text-white d-flex" style="margin-top:3%">
+    <div class="container my-auto">
 
-    <!-- Introduction about Mic On Medoly Club -->
-    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-          </div>
+    </div>
+  </header>
+
+  <!-- Introduction about Mic On Medoly Club -->
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">We've got what you need!</h2>
+          <hr class="light my-4">
+          <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates
+            and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!--------------------------------------------------- -->
 
   <!-- Introduction about NTT -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Nhà Tài Trợ</h2>
-            <hr class="my-4">
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Nhà Tài Trợ</h2>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
+            <h3 class="mb-3">Sturdy Templates</h3>
+            <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+            <h3 class="mb-3">Ready to Ship</h3>
+            <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+            <h3 class="mb-3">Up to Date</h3>
+            <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box mt-5 mx-auto">
+            <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+            <h3 class="mb-3">Made with Love</h3>
+            <p class="text-muted mb-0">You have to make your websites with love these days!</p>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!--------------------------------------------------- -->
+  <!--------------------------------------------------- -->
 
-    <!-- Introduction about Video -->
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <% data_video_array.forEach(function(data_video) { %>
-            <div class="col-sm-4">
-                <a class="portfolio-box" href="/details/<%= data_video.id %>">
-                  <iframe width="99%" height="315" src="https://www.youtube.com/embed/<%= data_video.link_video %>?modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                  <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                      <div class="project-category text-faded">
-                          <h3><b><%= data_video.full_name %></b></h3>
-                      </div>
-                      <div class="project-name">
-                          <i><%= data_video.description %></i>
-                      </div>
-                    </div>
+  <!-- Introduction about Video -->
+  <section class="p-0" id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters popup-gallery">
+        <% data_video_array.forEach(function(data_video) { %>
+          <div class="col-sm-4">
+            <a class="portfolio-box" href="/details/<%= data_video.id %>">
+              <iframe width="99%" height="315" src="https://www.youtube.com/embed/<%= data_video.link_video %>?modestbranding=1&autohide=1&showinfo=0&controls=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    <h3>
+                      <b>
+                        <%= data_video.full_name %>
+                      </b>
+                    </h3>
+                  </div>
+                  <div class="project-name">
+                    <i>
+                      <%= data_video.description %>
+                    </i>
+                  </div>
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
+          </div>
           <% }); %>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
   <!--------------------------------------------------- -->
 
   <!-- Introduction about contact  -->
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:bangnxse04011@fpt.edu.vn">feedback@startbootstrap.com</a>
-            </p>
-          </div>
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <hr class="my-4">
+          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back
+            to you as soon as possible!</p>
         </div>
       </div>
-    </section>
-  
-    <!--------------------------------------------------- -->
-  
-    <!-- Bootstrap core JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="../public/js/creative.min.js"></script>
-    <script src="/js/suggestsearch.js"></script>
-    <script lang="javascript">(function() {var pname = ( (document.title !='')? document.title : ((document.querySelector('h1') != null)? document.querySelector('h1').innerHTML : '') );var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async=1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=265b162ab4d1bd8e7772a553d17f4e64&data=eyJzc29faWQiOjUzNDE0NDUsImhhc2giOiJhY2FiMjhhY2NiNTJjZTU5NzlmM2E3NzMwZDg0MzEwYSJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>	
-  </body>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+          <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+          <p>
+            <a href="mailto:bangnxse04011@fpt.edu.vn">feedback@startbootstrap.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--------------------------------------------------- -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/scrollreveal/scrollreveal.min.js"></script>
+  <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../public/js/creative.min.js"></script>
+  <script src="/js/suggestsearch.js"></script>
+  <script lang="javascript">(function () { var pname = ((document.title != '') ? document.title : ((document.querySelector('h1') != null) ? document.querySelector('h1').innerHTML : '')); var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = 1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=265b162ab4d1bd8e7772a553d17f4e64&data=eyJzc29faWQiOjUzNDE0NDUsImhhc2giOiJhY2FiMjhhY2NiNTJjZTU5NzlmM2E3NzMwZDg0MzEwYSJ9&pname=' + pname; var s = document.getElementsByTagName('script'); s[0].parentNode.insertBefore(ga, s[0]); })();</script>
+</body>
+
 </html>
