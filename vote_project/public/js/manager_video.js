@@ -22,6 +22,7 @@ $(document).ready(function(){
         let data_video = $('#link_video').val();
         let data = data_video.split('/');
         $('#id').val(data[0]);
+        $('#id_delete').val(data[0]);
         let src = "<input class='w3-input' type='text' value='" + data[0] + "' name='id' style='display: none;' /><iframe id='show_video' width='100%' height='100%' src='https://www.youtube.com/embed/" + data[1] + "?modestbranding=1&autohide=1&showinfo=0&controls=0' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
         $('#show_video').html(src);
     });

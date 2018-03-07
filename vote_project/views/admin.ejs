@@ -95,9 +95,15 @@
         <input id="id" class="w3-button w3-green" type="hidden" value="" name="id"/>
         <textarea class="w3-input" placeholder="Write something.." name="description" /></textarea>
         </br>
-        <input class="w3-button w3-green" type="submit" value="Lưu">   <input class="w3-button w3-green" type="button" value="Xóa video này">  
+        <input class="w3-button w3-green" type="submit" value="Lưu"> 
       </p>
     </form>
+    <br/>
+    <form class="w3-container w3-card-4" action="/admin/delete_video" method="GET">
+      <input id="id_delete" class="w3-button w3-green" type="hidden" value="" name="id_delete"/>
+      <input class="w3-button w3-green" type="submit" value="Xóa video này">
+    </form>
+    <br/><br/><br/>
     <div style="height:40em;" id="show_video">
     </div>
   </div>

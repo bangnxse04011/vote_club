@@ -174,4 +174,21 @@ router.get('/delete_acc/:id' , function(req, res, next) {
   }
 });
 
+/**
+ * DELETE acc
+ */
+router.get('/delete_video' , function(req, res, next) {
+  let id_delete = req.query.id_delete;
+  let uname_session = req.session.uname;
+  if(uname_session == null || uname_session == '' || uname_session == "") {
+    res.redirect('/admin/');
+  }
+  db_manager_video.destroy({
+    where: {
+      id : id_delete,
+    }
+  });
+  res.redirect("/admin/cp");
+});
+
 module.exports = router;
