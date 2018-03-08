@@ -12,7 +12,7 @@ $(document).ready(function(){
           $('#link_video').html(str);
         }
     }
-    xhttp.open("GET","https://miconshow/admin/managers/find_all");
+    xhttp.open("GET","https://miconshow.com/admin/managers/find_all");
     xhttp.send();
 
     /**
