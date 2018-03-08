@@ -16,7 +16,7 @@ $(document).ready(function(){
               str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td></tr>";
             }
           }
-          $('#list_users').html(str);
+          $('#list_users').append(str);
         }
     }
     xhttp.open("GET","https://miconshow.com/admin/view_all");
