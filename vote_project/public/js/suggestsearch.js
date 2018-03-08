@@ -110,7 +110,7 @@ function autocomplete(inp, arr) {
          call_back_function(list_data_user_name);
        }
    }
-   xhttp.open("GET","https://45.124.65.190:3000/users/");
+   xhttp.open("GET","http://45.124.65.190:3000/users/");
    xhttp.send();
  }
 
