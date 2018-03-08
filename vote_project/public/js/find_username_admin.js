@@ -19,6 +19,6 @@ $(document).ready(function(){
           $('#list_users').html(str);
         }
     }
-    xhttp.open("GET","http://45.124.65.190:3000/admin/view_all");
+    xhttp.open("GET","https://miconshow.com/admin/view_all");
     xhttp.send();
   });
