@@ -6,6 +6,7 @@ $(document).ready(function(){
           list_data_user_name = xhttp.responseText;
           var data_users = JSON.parse(list_data_user_name);
           let str = "";
+          let str_header = "<tr><th>Tên người dùng</th> <th></th></tr>";
           let status = $('#status').text();
           if(status == '-1' || status == -1) {
             for(var i = 0 ; i < data_users.length ; i++) {
@@ -16,7 +17,8 @@ $(document).ready(function(){
               str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td></tr>";
             }
           }
-          $('#list_users').append(str);
+          str_header += str;
+          $('#list_users').html(str_header);
         }
     }
     xhttp.open("GET","https://miconshow.com/admin/view_all");
