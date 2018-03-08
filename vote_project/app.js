@@ -79,8 +79,8 @@ app.use(function(req, res, next) {
  */
 passport.use(new passportfb(
   {
-    clientID: util._CLIENT_ID_FB(),
-    clientSecret: util._CLIENT_SECREATE(),
+    clientID: "168522840618492",
+    clientSecret: "a5cf5cca68b4a66cf83ea519110da3a1",
     callbackURL: "https://miconshow.com/authen/fb/cb",
     profileFields : ['email' , 'gender' , 'locale' , 'displayName']
   },
