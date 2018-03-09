@@ -141,14 +141,14 @@ router.get('/update_video' , function(req, res, next) {
 /* GET users listing. */
 router.get('/view_all', function(req, res, next) {
   let uname_session = req.session.uname;
-  if(uname_session == null || uname_session == '' || uname_session == "") {
+  let status =  req.session.status;
+  if(uname_session == null || uname_session == '' || uname_session == "" || status == '-1' || status == -1) {
     res.redirect('/admin/');
   }
   db_account_admin.findAll({
     plain: false
   }).then(account => {
     let account_details = account.map((r) => (r.toJSON()));
-    let status =  req.session.status;
     if(status == '-1' || status == -1) {
       for(var i = 0 ; i < account_details.length ; i ++) {
         if(account_details[i]['status'] == -1){
