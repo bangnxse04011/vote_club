@@ -142,6 +142,7 @@ router.get('/update_video' , function(req, res, next) {
 router.get('/view_all', function(req, res, next) {
   let uname_session = req.session.uname;
   let u_status =  req.session.status;
+  console.log("-----------------" + uname_session);
   if(uname_session == null || uname_session == '' || uname_session == "" || u_status != -1) {
     res.redirect('/admin/');
   }
@@ -154,6 +155,7 @@ router.get('/view_all', function(req, res, next) {
         username: uname_session
       }
     }).then(account_login => {
+      console.log(account_login + "-----------------" + u_status);
       if(account_login[0]['status'] == -1) {
         for(var i = 0 ; i < account_details.length ; i ++) {
           if(account_details[i]['status'] == -1){
