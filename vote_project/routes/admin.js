@@ -142,7 +142,7 @@ router.get('/update_video' , function(req, res, next) {
 router.get('/view_all', function(req, res, next) {
   let uname_session = req.session.uname;
   let u_status =  req.session.status;
-  if(uname_session == null || uname_session == '' || uname_session == "" || u_status == -1) {
+  if(uname_session == null || uname_session == '' || uname_session == "" || u_status != -1) {
     res.redirect('/admin/');
   }
   db_account_admin.findAll({
@@ -161,8 +161,6 @@ router.get('/view_all', function(req, res, next) {
           }
         }
         res.end(JSON.stringify(account_details));
-      } else {
-        res.end("M ko đủ quyển nha. ahihi!");
       }
     });
   }).catch(function (err) {
