@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
     res.end(JSON.stringify(video_array));
   }).catch(function (err) {
     console.log(err);
+    res.render('error');
   });
 });
 
@@ -49,9 +50,11 @@ router.get('/find_by_name', function(req, res, next) {
         });
       }).catch(function (err) {
         console.log(err);
+        res.render('error');
       });
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
   //---------------------------------------------
   } else {
@@ -67,6 +70,7 @@ router.get('/find_by_name', function(req, res, next) {
       res.render('search', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' , data_video_array : video_array, name_search_res : req.query.name_search });
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
   }
 });

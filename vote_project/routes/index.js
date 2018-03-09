@@ -28,11 +28,10 @@ router.get('/', function(req, res, next) {
           link_login_or_logout : '/log_out',
           data_video_array : video_array
         });
-      }).catch(function (err) {
-        console.log(err);
-      });
+      })
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
   //---------------------------------------------
   } else {
@@ -42,7 +41,7 @@ router.get('/', function(req, res, next) {
       let video_array = video.map((r) => (r.toJSON()));
       res.render('index', { title: 'Mic On' , user_name : 'Login' , link_login_or_logout : '/authen/fb' , data_video_array : video_array });
     }).catch(function (err) {
-      console.log(err);
+      res.render('error');
     });
   }
 });
@@ -112,6 +111,7 @@ router.get('/details/:id', function(req, res, next) {
       })
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
  //---------------------------------------------
   } else {
@@ -140,6 +140,7 @@ router.get('/details/:id', function(req, res, next) {
       });
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
   }
 });
@@ -157,6 +158,7 @@ router.get('/view_all', function(req, res, next) {
     res.end(JSON.stringify(account_details));
   }).catch(function (err) {
     console.log(err);
+    res.render('error');
   });
 });
 

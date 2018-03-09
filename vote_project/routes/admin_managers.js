@@ -14,6 +14,7 @@ router.get('/find_all', function(req, res, next) {
         res.end(JSON.stringify(video_array));
     }).catch(function (err) {
         console.log(err);
+        res.render('error');
     });
 });
 
@@ -32,6 +33,7 @@ router.get('/find_video_by_id/:id', function(req, res, next) {
         res.end(JSON.stringify(video_array));
     }).catch(function (err) {
         console.log(err);
+        res.render('error');
     });
 });
 

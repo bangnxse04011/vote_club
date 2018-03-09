@@ -38,6 +38,7 @@ router.post('/authen', function(req, res, next) {
       }      
     }).catch(function (err) {
       console.log(err);
+      res.render('error');
     });
 });
 
@@ -80,6 +81,7 @@ router.post('/add_account' , function(req, res, next) {
     }   
   }).catch(function (err) {
     console.log(err);
+    res.render('error');
   });
 });
 
@@ -149,6 +151,7 @@ router.get('/view_all', function(req, res, next) {
     res.end(JSON.stringify(account_details));
   }).catch(function (err) {
     console.log(err);
+    res.render('error');
   });
 });
 
