@@ -100,13 +100,8 @@ header.masthead hr{margin-top:30px;margin-bottom:30px}header.masthead h1{font-si
     width: 50%;
   }
   
-  /* Add padding to container elements */
-  .container {
-      padding: 16px;
-  }
-  
   /* The Modal (background) */
-  .modal {
+  .modalmodal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
       z-index: 1; /* Sit on top */
@@ -120,7 +115,7 @@ header.masthead hr{margin-top:30px;margin-bottom:30px}header.masthead h1{font-si
  }
   
   /* Modal Content/Box */
-  .modal-content {
+  .modalmodal-content {
       background-color: #fefefe;
       margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
       border: 1px solid #888;
@@ -134,7 +129,7 @@ header.masthead hr{margin-top:30px;margin-bottom:30px}header.masthead h1{font-si
   }
    
   /* The Close Button (x) */
-  .close {
+  .modalclose {
       position: absolute;
       right: 35px;
       top: 15px;
