@@ -40,25 +40,26 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="mainNav">
     <div class="container">
       <a style="color : #f05f40" class="navbar-brand js-scroll-trigger" href="/">Mic On</a>
+      <form action="/users/find_by_name" autocomplete="off" method="GET" style="margin-left: 11%;">
+        <div class="" id="">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <div class="autocomplete">
+                <input type="text" id="inputsearch" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
+              </div>
+            </li>
+            <li class="nav-item" style="margin-left:1em;margin-right:1em;">
+              <button type="submit" class="w3-btn w3-large w3-grey w3-round-xlarge ">Search</button>
+            </li>
+          </ul>
+        </div>
+      </form>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <!-- Search by name-->
-        <form action="/users/find_by_name" autocomplete="off" method="GET" style="margin-left: 11%;">
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <div class="autocomplete" style="width:300px;">
-                  <input type="text" id="inputsearch" name="name_search" class="form-control" placeholder="Tìm kiếm theo tên" />
-                </div>
-              </li>
-              <li class="nav-item" style="margin-left:1em;margin-right:1em;">
-                <button type="submit" class="w3-btn w3-large w3-grey w3-round-xlarge ">Search</button>
-              </li>
-            </ul>
-          </div>
-        </form>
+       
         <!---->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">

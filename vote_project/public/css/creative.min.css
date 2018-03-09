@@ -157,3 +157,9 @@ header.masthead hr{margin-top:30px;margin-bottom:30px}header.masthead h1{font-si
          width: 100%;
       }
   }
+  @media screen and (max-width :768px){
+    .resizeinput{
+        width: 100%;
+    }
+
+  }
