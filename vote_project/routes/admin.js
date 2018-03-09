@@ -142,24 +142,19 @@ router.get('/update_video' , function(req, res, next) {
 router.get('/view_all', function(req, res, next) {
   let uname_session = req.session.uname;
   let status =  req.session.status;
-  if(uname_session == null || uname_session == '' || uname_session == "" || status == '-1' || status == -1) {
+  if(uname_session == null || uname_session == '' || uname_session == "" || status != '-1' || status != -1) {
     res.redirect('/admin/');
   }
   db_account_admin.findAll({
     plain: false
   }).then(account => {
     let account_details = account.map((r) => (r.toJSON()));
-    if(status == '-1' || status == -1) {
       for(var i = 0 ; i < account_details.length ; i ++) {
         if(account_details[i]['status'] == -1){
             delete account_details[i];
         }
       }
       res.end(JSON.stringify(account_details));
-    } else {
-      res.end("M ko có đủ quyền để xem nhé ahihi!");
-    }
-    
   }).catch(function (err) {
     console.log(err);
     res.render('error');
