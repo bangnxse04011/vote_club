@@ -148,12 +148,18 @@ router.get('/view_all', function(req, res, next) {
     plain: false
   }).then(account => {
     let account_details = account.map((r) => (r.toJSON()));
-    for(var i = 0 ; i < account_details.length ; i ++) {
-      if(account_details[i]['status'] == -1){
-          delete account_details[i];
+    let status =  req.session.status;
+    if(status == '-1' || status == -1) {
+      for(var i = 0 ; i < account_details.length ; i ++) {
+        if(account_details[i]['status'] == -1){
+            delete account_details[i];
+        }
       }
+      res.end(JSON.stringify(account_details));
+    } else {
+      res.end("M ko có đủ quyền để xem nhé ahihi!");
     }
-    res.end(JSON.stringify(account_details));
+    
   }).catch(function (err) {
     console.log(err);
     res.render('error');
