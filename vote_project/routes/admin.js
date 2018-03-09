@@ -148,6 +148,11 @@ router.get('/view_all', function(req, res, next) {
     plain: false
   }).then(account => {
     let account_details = account.map((r) => (r.toJSON()));
+    for(var i = 0 ; i < account_details.length ; i ++) {
+      if(account_details[i]['status'] == -1){
+          delete account_details[i];
+      }
+    }
     res.end(JSON.stringify(account_details));
   }).catch(function (err) {
     console.log(err);
