@@ -10,11 +10,15 @@ $(document).ready(function(){
           let status = $('#status').text();
           if(status == '-1' || status == -1) {
             for(var i = 0 ; i < data_users.length ; i++) {
-              str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td> <td><button class=' w3-button w3-black w3-medium w3-round-large'><a href='/admin/delete_acc/"+ data_users[i]['id'] +"'>Xóa Quyền Admin</a></button></td> </tr>";
+              if(data_users[i]['username'] != null && data_users[i]['username'] != '') {
+                str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td> <td><button class=' w3-button w3-black w3-medium w3-round-large'><a href='/admin/delete_acc/"+ data_users[i]['id'] +"'>Xóa Quyền Admin</a></button></td> </tr>";
+              }
             }
           } else {
             for(var i = 0 ; i < data_users.length ; i++) {
-              str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td></tr>";
+              if(data_users[i]['username'] != null && data_users[i]['username'] != '') {
+                str += "<tr><td style='vertical-align: middle' >"+ data_users[i]['username'] +"</td></tr>";
+              }
             }
           }
           str_header += str;
