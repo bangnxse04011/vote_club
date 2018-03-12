@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
 router.get('/find_by_name', function(req, res, next) {
   let user_id = req.session.user_id;
   let name_search = req.query.name_search;
+  req.session.CUR_URl = '/users/find_by_name?name_search=' + name_search;
   // Check if user login
   if(user_id) {
     db_account.findOne({

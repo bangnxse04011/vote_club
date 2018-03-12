@@ -59,8 +59,7 @@ app.get('/authen/fb/cb' , passport.authenticate('facebook', { failureRedirect: '
   function(req, res) {
     // Successful authentication, redirect home.
     req.session.user_id = users_id_user;
-    console.log(req.session.user_id);
-    res.redirect('/');
+    res.redirect(req.session.CUR_URl || '/');
   });
     // successRedirect: '/users',
     // session: false

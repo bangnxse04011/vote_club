@@ -48,6 +48,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/log_out' , function(req, res, next) {
   delete req.session.user_id;
+  delete req.session.CUR_URl;
   res.redirect('/');
 });
 
@@ -59,6 +60,7 @@ router.get('/details/:id', function(req, res, next) {
   let user_profile_video;
   let user_like_video_id = false;
   let id_video = req.params['id'];
+  req.session.CUR_URl = '/details/' + id_video;
   let total_like = 0;
   let link_avata_button_like = '/img/heart.png'
   // find link video form db
