@@ -133,6 +133,10 @@ router.get('/details/:id', function(req, res, next) {
       }).then(manager_like => {
         let manager_like_video = manager_like.map((r) => (r.toJSON()));
         total_like = manager_like_video.length;
+        // id_video_tinhnx fake like to id_video_tinhnx
+        if(id_video_tinhnx == 35 || id_video_tinhnx == '35') {
+          total_like = 300 + manager_like_video.length;
+        }
         res.render('details', { 
           host : host,
           title: 'Mic On' , 
