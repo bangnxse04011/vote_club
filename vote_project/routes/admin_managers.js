@@ -19,6 +19,9 @@ router.get('/download_file', function(req, res, next) {
         file.on('error', function(err) {});
         let account_details = account.map((r) => (r.toJSON()));
         for (let index = 0; index < account_details.length; index++) {
+            if(account_details[index]['email'] == null) {
+                account_details[index]['email'] = '';
+            }
             file.write(account_details[index]['fullName'] + "," +  account_details[index]['email'] + ", https://www.facebook.com/" +  account_details[index]['id_user'] + '\r\n');
         }
         file.end();
