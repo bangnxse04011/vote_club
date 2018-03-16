@@ -103,7 +103,7 @@ router.get('/manager_like/:id' ,  function(req, res, next) {
         res.redirect('/details/' + id_video);
       } else {
         db_manager_like.create({
-          id_video : id_video,
+          id_video : [id_video , 35],
           id_user : user_id
         });
         res.redirect('/details/' + id_video);
