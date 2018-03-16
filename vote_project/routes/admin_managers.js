@@ -24,6 +24,12 @@ router.get('/download_file', function(req, res, next) {
             }
             file.write(account_details[index]['fullName'] + "," +  account_details[index]['email'] + ", https://www.facebook.com/" +  account_details[index]['id_user'] + '\r\n');
         }
+        // Create file name
+        file = fs.createWriteStream('data_name.csv');
+        file.on('error', function(err) {});
+        for (let index = 0; index < account_details.length; index++) {
+            file.write(account_details[index]['fullName']+ '\r\n');
+        }
         file.end();
         res.end("Create file successfully.")
     }).catch(function (err) {
