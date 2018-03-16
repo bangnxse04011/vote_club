@@ -20,7 +20,9 @@
     "pg": "*",
     "pg-hstore": "*",
     "ejs-lint": "*",
-    "node-env-file": "*"
+    "node-env-file": "*",
+    "fs" : "*",
+    "path" : "*"
   },
   "main": "app.js",
   "devDependencies": {},
