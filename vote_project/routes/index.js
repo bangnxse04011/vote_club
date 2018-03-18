@@ -61,6 +61,7 @@ router.get('/details/:id', function(req, res, next) {
   let user_like_video_id = false;
   let id_video = req.params['id'];
   let id_video_tinhnx = req.params['id'];
+  let id_video_lyth = req.params['id'];
   req.session.CUR_URl = '/details/' + id_video;
   let total_like = 0;
   let link_avata_button_like = '/img/heart.png'
@@ -95,6 +96,9 @@ router.get('/details/:id', function(req, res, next) {
           // id_video_tinhnx fake like to id_video_tinhnx
           if(id_video_tinhnx == 35 || id_video_tinhnx == '35') {
             total_like = 777 + manager_like_video.length;
+          }
+          if(id_video_lyth == 19 || id_video_lyth == '19') {
+            total_like = 111 + manager_like_video.length;
           }
           for(var i = 0 ; i < manager_like_video.length ; i++) {
             if(manager_like[i]['id_user'] == user_id ) {
@@ -136,6 +140,9 @@ router.get('/details/:id', function(req, res, next) {
         // id_video_tinhnx fake like to id_video_tinhnx
         if(id_video_tinhnx == 35 || id_video_tinhnx == '35') {
           total_like = 777 + manager_like_video.length;
+        }
+        if(id_video_lyth == 19 || id_video_lyth == '19') {
+          total_like = 111 + manager_like_video.length;
         }
         res.render('details', { 
           host : host,
