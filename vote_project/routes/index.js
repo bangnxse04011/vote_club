@@ -143,10 +143,14 @@ router.get('/details/:id', function(req, res, next) {
         total_like = manager_like_video.length + 111;
         // id_video_tinhnx fake like to id_video_tinhnx
         if(id_video_tinhnx == 35 || id_video_tinhnx == '35') {
-          total_like += 777;
+          // total_like += 777;
+          total_like -= 7777;
         }
         if(id_video_lyth == 19 || id_video_lyth == '19') {
           total_like += 111;
+        }
+        if(id_video == 31 || id_video == '31') {
+          total_like -= 111;
         }
         res.render('details', { 
           host : host,
